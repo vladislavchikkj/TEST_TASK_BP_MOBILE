@@ -68,6 +68,7 @@ loadLanguageStrings(language).then(updateTexts)
 
 document.querySelector('#app').innerHTML = `
   <div class="container">
+  <div class="mt-0">
     <a href="#" class="close" aria-label="close">
       <img src="/cross/Cross.png" srcset="/cross/Cross@1.5x.png 1.5x, /cross/Cross@2x.png 2x, /cross/Cross@3x.png 3x" alt="Close"/>
     </a>
@@ -103,6 +104,7 @@ document.querySelector('#app').innerHTML = `
       </div>
     </div>
     <button id="continue"></button>
+    </div>
     <div class="links">
       <a href="#" id="terms">Terms of Use</a>
       <a href="#" id="privacy">Privacy Policy</a>

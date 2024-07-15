@@ -1,7 +1,7 @@
 import './style.css'
 
 const supportedLanguages = ['en', 'es', 'fr', 'de', 'ja', 'pt']
-let defaultLanguage = 'en'
+const defaultLanguage = 'en'
 
 function getLanguage() {
 	const urlParams = new URLSearchParams(window.location.search)
@@ -20,18 +20,16 @@ function getLanguage() {
 async function loadLanguageStrings(lang) {
 	try {
 		const response = await fetch(`/lang/${lang}.json`)
-		if (!response.ok) {
+		if (!response.ok)
 			throw new Error(`Failed to load language file: ${response.statusText}`)
-		}
 		return await response.json()
 	} catch (error) {
 		console.error('Error loading language file:', error)
 		const fallbackResponse = await fetch(`/lang/${defaultLanguage}.json`)
-		if (!fallbackResponse.ok) {
+		if (!fallbackResponse.ok)
 			throw new Error(
 				`Failed to load fallback language file: ${fallbackResponse.statusText}`
 			)
-		}
 		return await fallbackResponse.json()
 	}
 }
@@ -52,8 +50,6 @@ function updateTexts(strings) {
 	document.querySelector('#restore').innerText = strings['Restore']
 	document.querySelector('#terms').innerText = strings['Terms of Use']
 	document.querySelector('#privacy').innerText = strings['Privacy Policy']
-
-	// Update card texts
 	document.querySelector('.card-item:nth-child(1) .card-text').innerHTML =
 		strings['Unlimited Art <br>Creation']
 	document.querySelector('.card-item:nth-child(2) .card-text').innerHTML =
@@ -68,40 +64,42 @@ async function changeLanguage(lang) {
 }
 
 const language = getLanguage()
-loadLanguageStrings(language).then(strings => updateTexts(strings))
+loadLanguageStrings(language).then(updateTexts)
 
 document.querySelector('#app').innerHTML = `
   <div class="container">
-  <a class="close">x</a>
+    <a href="#" class="close" aria-label="close">
+      <img src="/cross/Cross.png" srcset="/cross/Cross@1.5x.png 1.5x, /cross/Cross@2x.png 2x, /cross/Cross@3x.png 3x" alt="Close"/>
+    </a>
     <h1 id="title"></h1>
     <div id="cards">
       <div class="card-item">
-        <img src="/card1/1.png" alt="card1"/>
-        <p class="card-text">Unlimited Art <br>Creation</p>
+        <img src="/card1/1.png" srcset="/card1/1@2x.png 2x, /card1/1@3x.png 3x" alt="Unlimited Art Creation"/>
+        <p class="card-text"></p>
       </div>
       <div class="card-item">
-        <img src="/card2/f2.png" alt="card2"/>
-        <p class="card-text">Magic Avatars <br>With 20% Off</p>
+        <img src="/card2/f2.png" srcset="/card2/2@2x.png 2x, /card2/2@3x.png 3x" alt="Magic Avatars With 20% Off"/>
+        <p class="card-text"></p>
       </div>
       <div class="card-item">
-        <img src="/card3/f3.png" alt="card3"/>
-        <p class="card-text">Exclusive <br>Styles</p>
+        <img src="/card3/f3.png" srcset="/card3/f3@2x.png 2x, /card3/f3@3x.png 3x" alt="Exclusive Styles"/>
+        <p class="card-text"></p>
       </div>
     </div>
     <div class="offer">
       <div class="offer-item active">
         <div>
           <p id="yearly" class="fw-600"></p>
-          <p id="yearly-price"></p>
+          <p id="yearly-price" class="fl-70"></p>
         </div>
         <div>
-          <p id="price">$0.48 <br/>per week</p>
+          <p id="price" class="fl-70">$0.48 <br/>per week</p>
         </div>
         <p id="best-offer" class="best-offer"></p>
       </div>
       <div class="offer-item">
         <p id="weekly" class="fw-600"></p>
-        <p id="weekly-price"></p>
+        <p id="weekly-price" class="fl-70"></p>
       </div>
     </div>
     <button id="continue"></button>

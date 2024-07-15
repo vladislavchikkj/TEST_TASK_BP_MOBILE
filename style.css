@@ -1,32 +1,39 @@
 body {
-	padding: 0;
 	margin: 0;
+	padding: 0;
 	font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 		'Helvetica Neue', Arial, sans-serif;
 	background-color: #000;
 	color: #fff;
-	background-image: url('/bg-1.png');
+	background-image: url('/bg.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 100vh;
+	overflow: hidden;
 }
 
 .container {
-	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	padding: 0 1.5rem 0 1.5rem;
+	padding: 0 1.5rem;
 	height: 100vh;
+	max-width: 390px;
+	margin: 0 auto;
+	position: relative;
 }
 
 .close {
 	text-decoration: none;
+	position: absolute;
+	top: 2rem;
+	left: 1.5rem;
+	cursor: pointer;
 }
 
 h1 {
-	padding-top: 10vh;
+	padding-top: 6vh;
 	font-size: 2.5rem;
 	line-height: 1.2em;
 }
@@ -60,7 +67,6 @@ h1 {
 }
 
 .offer {
-	position: relative;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -76,14 +82,16 @@ h1 {
 	background: rgba(255, 255, 255, 0.1016);
 	backdrop-filter: blur(10px);
 	border-radius: 2rem;
-	padding: 0 1.5rem 0 1.5rem;
+	padding: 0 1.5rem;
 	text-align: start;
 	margin-bottom: 0.5rem;
 }
+
 .active {
 	border: 1px solid white;
 	background: rgba(255, 255, 255, 0.3024);
 }
+
 .fw-600 {
 	font-weight: 700;
 }
@@ -112,15 +120,14 @@ button {
 	justify-content: center;
 	align-items: center;
 	border-radius: 2rem;
-	padding: 0 1.5rem 0 1.5rem;
+	padding: 0 1.5rem;
 	text-align: center;
 	font-size: 1.25rem;
 	font-weight: 600;
 	margin-top: 1rem;
 	width: 100%;
-}
-
-button:hover {
+	border: none;
+	cursor: pointer;
 }
 
 .links {
@@ -129,7 +136,9 @@ button:hover {
 	gap: 1rem;
 	margin-top: auto;
 	text-align: start;
+	padding-top: 0.625rem;
 	padding-bottom: 0.625rem;
+	align-items: center;
 }
 
 .links a {
@@ -140,4 +149,8 @@ button:hover {
 
 .links a:hover {
 	text-decoration: underline;
+}
+
+.fl-70 {
+	filter: brightness(70%);
 }

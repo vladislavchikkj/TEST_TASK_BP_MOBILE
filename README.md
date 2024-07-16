@@ -2,4 +2,4 @@
 
 ---
 
-**Deploy [https://test-task-bp-mobile-do8d.vercel.app/]
+*Deploy [https://test-task-bp-mobile-do8d.vercel.app/]

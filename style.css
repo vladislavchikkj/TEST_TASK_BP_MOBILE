@@ -1,32 +1,70 @@
+:root {
+	--font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Helvetica Neue', Arial, sans-serif;
+	--background-color: #000;
+	--text-color: #fff;
+	--text-color-black: #000000;
+	--text-dimmed-color: #ffffff80;
+	--best-offer-background: #fff;
+	--best-offer-color: #000;
+	--button-background: rgba(255, 255, 255, 0.102);
+	--button-active-background: rgba(255, 255, 255, 0.3024);
+	--button-border-color: white;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
 body {
 	margin: 0;
 	padding: 0;
-	font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-		'Helvetica Neue', Arial, sans-serif;
-	background-color: #000;
-	color: #fff;
+	height: 100%;
+}
+
+body {
+	font-family: var(--font-family);
+	background-color: var(--background-color);
+	color: var(--text-color);
 	background-image: url('/bg.png');
 	background-size: cover;
 	background-repeat: no-repeat;
-	height: 100vh;
+	padding-top: env(safe-area-inset-top);
+	padding-bottom: env(safe-area-inset-bottom);
+	padding-left: env(safe-area-inset-left);
+	padding-right: env(safe-area-inset-right);
 	overflow: hidden;
+}
+
+#app {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	padding-bottom: env(safe-area-inset-bottom);
+	box-sizing: border-box;
 }
 
 .container {
 	display: flex;
 	flex-direction: column;
+	justify-content: flex-end;
 	align-items: center;
 	text-align: center;
-	padding: 0 1.5rem;
-	height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
 	max-width: 390px;
 	position: relative;
+	margin: 0 auto;
+	height: 100%;
+	box-sizing: border-box;
 }
 
 .close {
 	text-decoration: none;
 	position: absolute;
-	top: 2rem;
+	top: calc(env(safe-area-inset-top) + 2rem);
 	left: 1.5rem;
 	cursor: pointer;
 }
@@ -34,6 +72,8 @@ body {
 h1 {
 	font-size: 2.5rem;
 	line-height: 1.2em;
+	margin: 0;
+	padding: 0;
 }
 
 #cards {
@@ -41,6 +81,7 @@ h1 {
 	justify-content: space-between;
 	gap: 0.875rem;
 	width: 100%;
+	margin: 1rem 0;
 }
 
 .card-item {
@@ -54,6 +95,7 @@ h1 {
 .card-item img {
 	width: 100%;
 	height: 100%;
+	border-radius: 0.675rem;
 }
 
 .card-text {
@@ -62,13 +104,14 @@ h1 {
 	bottom: 0;
 	text-align: start;
 	padding-left: 0.45rem;
+	color: var(--text-color);
 }
 
 .offer {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	padding-top: 3.125rem;
+	padding-top: 1rem;
 	padding-bottom: 0.5rem;
 }
 
@@ -78,7 +121,7 @@ h1 {
 	height: 3.5rem;
 	justify-content: space-between;
 	align-items: center;
-	background: rgba(255, 255, 255, 0.1016);
+	background: var(--button-background);
 	backdrop-filter: blur(10px);
 	border-radius: 2rem;
 	padding: 0 1.5rem;
@@ -86,12 +129,12 @@ h1 {
 	margin-bottom: 0.5rem;
 }
 
-.active {
-	border: 1px solid white;
-	background: rgba(255, 255, 255, 0.3024);
+.offer-item.active {
+	border: 1px solid var(--button-border-color);
+	background: var(--button-active-background);
 }
 
-.fw-600 {
+.text-bold {
 	font-weight: 700;
 }
 
@@ -105,9 +148,9 @@ h1 {
 	top: -0.6875rem;
 	right: 1.875rem;
 	font-size: 0.8125rem;
-	background: #fff;
+	background: var(--best-offer-background);
 	border-radius: 0.625rem;
-	color: #000;
+	color: var(--best-offer-color);
 	height: 1.25rem;
 	width: 7.4375rem;
 	text-align: center;
@@ -127,6 +170,9 @@ button {
 	width: 100%;
 	border: none;
 	cursor: pointer;
+	background: var(--button-border-color);
+	color: var(--text-color-black);
+	margin-bottom: env(safe-area-inset-bottom);
 }
 
 .links {
@@ -134,14 +180,12 @@ button {
 	justify-content: center;
 	gap: 1rem;
 	text-align: start;
-	padding-bottom: 1rem;
+	padding: 1rem 0 0.5rem;
 	align-items: center;
-	padding-top: 1rem;
-	padding-bottom: 0.5rem;
 }
 
 .links a {
-	color: #ffffff80;
+	color: var(--text-dimmed-color);
 	text-decoration: none;
 	font-size: 0.78125rem;
 }
@@ -150,10 +194,32 @@ button {
 	text-decoration: underline;
 }
 
-.fl-70 {
+.text-dimmed {
 	filter: brightness(70%);
 }
 
-.mt-0 {
+.header {
 	margin-top: auto;
+}
+
+/* Media Queries for different iPhone models */
+@media screen and (max-width: 320px) {
+	/* For iPhone SE */
+	.container {
+		max-width: 280px;
+	}
+}
+
+@media screen and (min-width: 375px) and (max-width: 414px) {
+	/* For iPhone 8+, iPhone 11 Pro, iPhone 14 */
+	.container {
+		max-width: 375px;
+	}
+}
+
+@media screen and (min-width: 428px) {
+	/* For iPhone 14 Plus, iPhone 14 Pro Max */
+	.container {
+		max-width: 390px;
+	}
 }

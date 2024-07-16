@@ -74,6 +74,16 @@ h1 {
 	line-height: 1.2em;
 	margin: 0;
 	padding: 0;
+	word-wrap: break-word;
+}
+
+.card-text,
+.text-bold,
+.text-dimmed,
+.best-offer,
+button,
+.links a {
+	white-space: normal;
 }
 
 #cards {
@@ -105,6 +115,7 @@ h1 {
 	text-align: start;
 	padding-left: 0.45rem;
 	color: var(--text-color);
+	word-wrap: break-word;
 }
 
 .offer {
@@ -138,12 +149,9 @@ h1 {
 	font-weight: 700;
 }
 
-.offer-item p {
-	margin: 0;
-	padding: 0;
-}
-
 .best-offer {
+	display: flex;
+	align-items: center;
 	position: absolute;
 	top: -0.6875rem;
 	right: 1.875rem;
@@ -152,8 +160,14 @@ h1 {
 	border-radius: 0.625rem;
 	color: var(--best-offer-color);
 	height: 1.25rem;
-	width: 7.4375rem;
 	text-align: center;
+	white-space: nowrap;
+	padding: 0 0.5rem;
+}
+
+.offer-item p {
+	margin: 0;
+	padding: 0;
 }
 
 button {
@@ -180,7 +194,7 @@ button {
 	justify-content: center;
 	gap: 1rem;
 	text-align: start;
-	padding: 1rem 0 0.5rem;
+	padding: 2rem 0 0.5rem;
 	align-items: center;
 }
 
@@ -208,6 +222,21 @@ button {
 	.container {
 		max-width: 280px;
 	}
+	h1 {
+		font-size: 3rem;
+	}
+	.card-text {
+		font-size: 0.5rem;
+	}
+	.best-offer {
+		font-size: 0.6rem;
+	}
+	button {
+		font-size: 1rem;
+	}
+	.links a {
+		font-size: 0.7rem;
+	}
 }
 
 @media screen and (min-width: 375px) and (max-width: 414px) {
@@ -215,11 +244,42 @@ button {
 	.container {
 		max-width: 375px;
 	}
+	h1 {
+		font-size: 2.5rem;
+		box-sizing: content-box;
+	}
+	.card-text {
+		font-size: 0.5rem;
+	}
+	.best-offer {
+		font-size: 0.6rem;
+	}
+	button {
+		font-size: 1rem;
+	}
+	.links a {
+		font-size: 0.7rem;
+	}
 }
 
 @media screen and (min-width: 428px) {
 	/* For iPhone 14 Plus, iPhone 14 Pro Max */
 	.container {
 		max-width: 390px;
+	}
+	h1 {
+		font-size: 3rem;
+	}
+	.card-text {
+		font-size: 0.625rem;
+	}
+	.best-offer {
+		font-size: 0.75rem;
+	}
+	button {
+		font-size: 1.125rem;
+	}
+	.links a {
+		font-size: 0.75rem;
 	}
 }

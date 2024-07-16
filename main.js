@@ -59,6 +59,41 @@ function updateTexts(strings) {
 		strings['Magic Avatars <br>With 20% Off']
 	document.querySelector('#card-text-3').innerHTML =
 		strings['Exclusive <br>Styles']
+
+	if (isMobileDevice()) {
+		adjustFontSize()
+	} else {
+		document.querySelector('h1').style.fontSize = '1.5rem'
+	}
+}
+
+function isMobileDevice() {
+	return (
+		window.innerWidth <= 414 ||
+		navigator.userAgent.toLowerCase().includes('mobile')
+	)
+}
+
+function adjustFontSize() {
+	const elements = document.querySelectorAll(
+		'.card-text, .text-bold, .text-dimmed, .best-offer, button, .links a'
+	)
+	elements.forEach(el => {
+		let fontSize = parseFloat(
+			window.getComputedStyle(el, null).getPropertyValue('font-size')
+		)
+		const lineHeight = parseFloat(
+			window.getComputedStyle(el, null).getPropertyValue('line-height')
+		)
+
+		while (
+			(el.scrollWidth > el.clientWidth || el.scrollHeight > el.clientHeight) &&
+			fontSize > 10
+		) {
+			fontSize -= 0.1
+			el.style.fontSize = `${fontSize / lineHeight}em`
+		}
+	})
 }
 
 const language = getLanguage()

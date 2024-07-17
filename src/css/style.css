@@ -80,8 +80,12 @@ h1 {
 	margin: 0;
 	padding: 0;
 	word-wrap: break-word;
+	position: absolute;
+	bottom: 2rem;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
 }
-
 .card-text,
 .text-bold,
 .text-dimmed,
@@ -218,7 +222,9 @@ button {
 }
 
 .header {
+	position: relative;
 	margin-top: auto;
+	width: 100%;
 }
 
 /* Media Queries for different iPhone models */
@@ -251,7 +257,6 @@ button {
 	}
 	h1 {
 		font-size: 2.5rem;
-		box-sizing: content-box;
 	}
 	.card-text {
 		font-size: 0.5rem;

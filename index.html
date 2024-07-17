@@ -11,18 +11,18 @@
 		<div id="app" class="app">
 			<div class="content">
 				<div class="container">
+					<a href="#" class="close" aria-label="close">
+						<img
+							src="/cross/Cross.png"
+							srcset="
+								/cross/Cross@1.5x.png 1.5x,
+								/cross/Cross@2x.png   2x,
+								/cross/Cross@3x.png   3x
+							"
+							alt="Close"
+						/>
+					</a>
 					<div class="header">
-						<a href="#" class="close" aria-label="close">
-							<img
-								src="/cross/Cross.png"
-								srcset="
-									/cross/Cross@1.5x.png 1.5x,
-									/cross/Cross@2x.png   2x,
-									/cross/Cross@3x.png   3x
-								"
-								alt="Close"
-							/>
-						</a>
 						<h1 id="title"></h1>
 					</div>
 					<div id="cards" class="cards">
@@ -52,7 +52,7 @@
 						</div>
 					</div>
 					<div class="offer">
-						<div class="offer-item active">
+						<div class="offer-item active" id="yearly-offer">
 							<div>
 								<p id="yearly" class="text-bold"></p>
 								<p id="yearly-price" class="text-dimmed"></p>
@@ -62,7 +62,7 @@
 							</div>
 							<div id="best-offer" class="best-offer"></div>
 						</div>
-						<div class="offer-item">
+						<div class="offer-item" id="weekly-offer">
 							<p id="weekly" class="text-bold"></p>
 							<p id="weekly-price-secondary" class="text-dimmed"></p>
 						</div>

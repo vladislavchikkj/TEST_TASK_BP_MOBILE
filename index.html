@@ -5,75 +5,77 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>TEST_TASK_BP_MOBILE</title>
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="/src/css/style.css" />
 	</head>
 	<body>
-		<div id="app">
-			<div class="container">
-				<div class="header">
-					<a href="#" class="close" aria-label="close">
-						<img
-							src="/cross/Cross.png"
-							srcset="
-								/cross/Cross@1.5x.png 1.5x,
-								/cross/Cross@2x.png   2x,
-								/cross/Cross@3x.png   3x
-							"
-							alt="Close"
-						/>
-					</a>
-					<h1 id="title"></h1>
-				</div>
-				<div id="cards">
-					<div class="card-item">
-						<img
-							src="/card1/1.png"
-							srcset="/card1/1@2x.png 2x, /card1/1@3x.png 3x"
-							alt="Unlimited Art Creation"
-						/>
-						<p class="card-text" id="card-text-1"></p>
+		<div id="app" class="app">
+			<div class="content">
+				<div class="container">
+					<div class="header">
+						<a href="#" class="close" aria-label="close">
+							<img
+								src="/cross/Cross.png"
+								srcset="
+									/cross/Cross@1.5x.png 1.5x,
+									/cross/Cross@2x.png   2x,
+									/cross/Cross@3x.png   3x
+								"
+								alt="Close"
+							/>
+						</a>
+						<h1 id="title"></h1>
 					</div>
-					<div class="card-item">
-						<img
-							src="/card2/f2.png"
-							srcset="/card2/2@2x.png 2x, /card2/2@3x.png 3x"
-							alt="Magic Avatars With 20% Off"
-						/>
-						<p class="card-text" id="card-text-2"></p>
-					</div>
-					<div class="card-item">
-						<img
-							src="/card3/f3.png"
-							srcset="/card3/f3@2x.png 2x, /card3/f3@3x.png 3x"
-							alt="Exclusive Styles"
-						/>
-						<p class="card-text" id="card-text-3"></p>
-					</div>
-				</div>
-				<div class="offer">
-					<div class="offer-item active">
-						<div>
-							<p id="yearly" class="text-bold"></p>
-							<p id="yearly-price" class="text-dimmed"></p>
+					<div id="cards" class="cards">
+						<div class="card-item">
+							<img
+								src="/card1/1.png"
+								srcset="/card1/1@2x.png 2x, /card1/1@3x.png 3x"
+								alt="Unlimited Art Creation"
+							/>
+							<p class="card-text" id="card-text-1"></p>
 						</div>
-						<div>
-							<p id="weekly-price" class="text-dimmed"></p>
+						<div class="card-item">
+							<img
+								src="/card2/f2.png"
+								srcset="/card2/2@2x.png 2x, /card2/2@3x.png 3x"
+								alt="Magic Avatars With 20% Off"
+							/>
+							<p class="card-text" id="card-text-2"></p>
 						</div>
-						<div id="best-offer" class="best-offer"></div>
+						<div class="card-item">
+							<img
+								src="/card3/f3.png"
+								srcset="/card3/f3@2x.png 2x, /card3/f3@3x.png 3x"
+								alt="Exclusive Styles"
+							/>
+							<p class="card-text" id="card-text-3"></p>
+						</div>
 					</div>
-					<div class="offer-item">
-						<p id="weekly" class="text-bold"></p>
-						<p id="weekly-price-secondary" class="text-dimmed"></p>
+					<div class="offer">
+						<div class="offer-item active">
+							<div>
+								<p id="yearly" class="text-bold"></p>
+								<p id="yearly-price" class="text-dimmed"></p>
+							</div>
+							<div>
+								<p id="weekly-price" class="text-dimmed"></p>
+							</div>
+							<div id="best-offer" class="best-offer"></div>
+						</div>
+						<div class="offer-item">
+							<p id="weekly" class="text-bold"></p>
+							<p id="weekly-price-secondary" class="text-dimmed"></p>
+						</div>
 					</div>
-				</div>
-				<button id="continue"></button>
-				<div class="links">
-					<a href="#" id="terms">Terms of Use</a>
-					<a href="#" id="privacy">Privacy Policy</a>
-					<a href="#" id="restore">Restore</a>
+					<button id="continue"></button>
+					<div class="links">
+						<a href="#" id="terms">Terms of Use</a>
+						<a href="#" id="privacy">Privacy Policy</a>
+						<a href="#" id="restore">Restore</a>
+					</div>
 				</div>
 			</div>
 		</div>
-		<script type="module" src="/main.js"></script>
+		<script type="module" src="/src/js/main.js"></script>
 	</body>
 </html>

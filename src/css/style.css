@@ -37,7 +37,12 @@ body {
 	overflow: hidden;
 }
 
-#app {
+.app {
+	height: 100%;
+}
+
+.content {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
@@ -86,7 +91,7 @@ button,
 	white-space: normal;
 }
 
-#cards {
+.cards {
 	display: flex;
 	justify-content: space-between;
 	gap: 0.875rem;

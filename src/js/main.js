@@ -1,4 +1,4 @@
-import './style.css'
+// import '../css/style.css'
 
 const supportedLanguages = ['en', 'es', 'fr', 'de', 'ja', 'pt']
 const defaultLanguage = 'en'

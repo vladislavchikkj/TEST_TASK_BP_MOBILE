@@ -1,5 +1,3 @@
-// import '../css/style.css'
-
 const supportedLanguages = ['en', 'es', 'fr', 'de', 'ja', 'pt']
 const defaultLanguage = 'en'
 
@@ -96,5 +94,30 @@ function adjustFontSize() {
 	})
 }
 
+function setupOfferSelection() {
+	const yearlyOffer = document.getElementById('yearly-offer')
+	const weeklyOffer = document.getElementById('weekly-offer')
+	const continueButton = document.getElementById('continue')
+
+	yearlyOffer.addEventListener('click', () => {
+		yearlyOffer.classList.add('active')
+		weeklyOffer.classList.remove('active')
+	})
+
+	weeklyOffer.addEventListener('click', () => {
+		weeklyOffer.classList.add('active')
+		yearlyOffer.classList.remove('active')
+	})
+
+	continueButton.addEventListener('click', () => {
+		if (yearlyOffer.classList.contains('active')) {
+			window.location.href = 'https://www.apple.com'
+		} else if (weeklyOffer.classList.contains('active')) {
+			window.location.href = 'https://www.google.com'
+		}
+	})
+}
+
 const language = getLanguage()
 loadLanguageStrings(language).then(updateTexts)
+setupOfferSelection()

@@ -27,7 +27,7 @@ body {
 	font-family: var(--font-family);
 	background-color: var(--background-color);
 	color: var(--text-color);
-	background-image: url('/bg.png');
+	background-image: url('/bg@1x.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	padding-top: env(safe-area-inset-top);
@@ -70,7 +70,7 @@ body {
 	text-decoration: none;
 	position: absolute;
 	top: calc(env(safe-area-inset-top) + 2rem);
-	left: 1.5rem;
+	left: 0.5rem;
 	cursor: pointer;
 }
 
@@ -203,7 +203,7 @@ button {
 	justify-content: center;
 	gap: 1rem;
 	text-align: start;
-	padding: 2rem 0 0.5rem;
+	padding: 2rem 0 2rem;
 	align-items: center;
 }
 
@@ -291,5 +291,19 @@ button {
 	}
 	.links a {
 		font-size: 0.75rem;
+	}
+}
+
+/* Retina Display */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	body {
+		background-image: url('/bg@2x.jpg');
+	}
+}
+
+/* Super Retina Display */
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+	body {
+		background-image: url('/bg@3x.jpg');
 	}
 }
